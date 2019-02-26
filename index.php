@@ -2,19 +2,16 @@
 require_once ('functions.php');
 require_once ('data.php');
 
-//function show_date($timestamp)
-//{
-//    $dt = data_creat();
-//    $dt = data_timestamp_set($dt, $timestamp);
-//
-//    $format = formatDate($dt, "d.m.Y H:i");
-//    return $format;
-//
-//}
+date_default_timezone_set('Europe/Moscow');
+
+
+
+
 
 $page_content = include_template('index.php', [
         'categories' => $categories,
-        'lots' => $lots
+        'lots' => $lots,
+        'format' => $format
 ]);
 
 $layout_content = include_template('layout.php', [

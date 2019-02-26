@@ -25,3 +25,11 @@ function include_template($name, $data) {
 
     return $result;
 }
+
+$format = date_create('now');
+function midnight($format) {
+    $midnight = date_create('tomorrow midnight');
+    $diff = date_diff($format, $midnight);
+    $format = date_interval_format($diff, '%H:%I');
+    return $format;
+}
